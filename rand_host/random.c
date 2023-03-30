@@ -7,7 +7,6 @@ typedef unsigned char u8_t;
 
 /* default address is 10 */
 u8_t max_size = 10;
-u8_t i;
 
 /* extra seed from urandom for better randomness*/
 u8_t rand_in_range(char seed)
@@ -33,8 +32,6 @@ int main(int argc, char *argv[])
 		}
 	}
 
-
-
 	/* open random gibberish */
 	FILE *fp;
 	fp = fopen("/dev/urandom","rb");
@@ -47,7 +44,7 @@ int main(int argc, char *argv[])
 	fgets(buf,max_size,fp);
 	fclose(fp);
 
-	for(i = 0; i < max_size; i++)
+	for(u8_t i = 0; i < max_size; i++)
 	{
 		/* keep our buf in ascii readable */
 		if(buf[i] < 33){buf[i]  = rand_in_range(buf[i]); }
