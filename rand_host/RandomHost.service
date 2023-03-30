@@ -1,0 +1,11 @@
+[Unit]
+Description=Random Hostname Generation
+
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/random_host -l 10
+
+[Install]
+WantedBy=multi-user.target
