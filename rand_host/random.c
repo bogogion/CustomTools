@@ -14,8 +14,8 @@ u8_t rand_in_range(char seed)
 	srand(time(NULL) * seed);
 	u8_t rand_num = rand() % 126;
 	
-	/* check for too low */
-	while(rand_num < 33)
+	/* check if num in range */
+	while(rand_num < 33 || rand_num > 126)
 	{ rand_num = rand() % 126; }
 }
 
